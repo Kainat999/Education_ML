@@ -1,0 +1,17 @@
+<h2>{{ user.username }}'s Profile</h2>
+<p>Bio: {{ userprofile.bio }}</p>
+<p>Preferences: {{ userprofile.preferences }}</p>
+
+<h3>Interests</h3>
+<ul>
+    {% for interest in userprofile.interests.all %}
+        <li>{{ interest.title }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Goals</h3>
+<ul>
+    {% for goal in userprofile.goals.all %}
+        <li>{{ goal.description }}</li>
+    {% endfor %}
+</ul>

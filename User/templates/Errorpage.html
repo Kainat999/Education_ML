@@ -1,0 +1,12 @@
+<!-- Show errors if there are any -->
+{% if errors %}
+    <div class="errors">
+        {% for field, error_list in errors.items %}
+            {% for error in error_list %}
+                <p>{{ field }}: {{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- The rest of your form goes here... -->

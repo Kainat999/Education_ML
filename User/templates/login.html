@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Personalized Education Platform</h3>
+                    <p>Login to access your account</p>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'profile-view' %}">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="submit" value="Login" class="btn btn-primary btn-block" >
+                        </div>
+                        
+                        <!-- If you want to add a "Forgot Password" or "Register" link, you can do so below -->
+                        <div class="text-center">
+                            <a href="#">Forgot Password?</a> | <a href="{% url 'register-view' %}">Register</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

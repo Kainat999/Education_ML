@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="vh-100 d-flex justify-content-center align-items-center bg-primary text-white">
+    <div class="text-center">
+        <h1 class="display-3 mb-4">Welcome to</h1>
+        <h2 class="display-4 mb-5">Personalized Education Platform</h2>
+        <p class="lead mb-5">Embark on a tailored educational journey crafted just for you.</p>
+        <div>
+            <a href="{% url 'login-view' %}" class="btn btn-light btn-lg me-3">Login</a>
+            <a href="{% url 'register-view' %}" class="btn btn-outline-light btn-lg">Register</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

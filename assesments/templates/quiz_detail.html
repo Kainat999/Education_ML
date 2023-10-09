@@ -1,0 +1,17 @@
+<h1>{{ quiz.title }}</h1>
+<p>{{ quiz.description }}</p>
+
+<ul>
+    {% for question in quiz.questions.all %}
+        <li>
+            {{ question.text }}
+            <ul>
+                {% for choice in question.choices.all %}
+                    <li>
+                        {{ choice.text }} {% if choice.is_correct %}(Correct Answer){% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
